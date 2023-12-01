@@ -2,9 +2,8 @@
 const inputPin = document.querySelector(".input-pin");
 const login = document.querySelector(".login-btn");
 const loginDiv = document.querySelector(".login");
-const removeBlur = document.querySelectorAll(".blur-background"); // same
 const form = document.querySelector(".form");
-const allSections = document.querySelectorAll(".section"); // same
+const allSections = document.querySelectorAll(".section");
 const understandBtn = document.querySelector(".understand-Btn");
 const understand = document.querySelector("#understand");
 
@@ -19,13 +18,14 @@ understandBtn.addEventListener("click", function () {
 document.body.style.overflow = "hidden";
 
 // Validating the User
-const passcode = 143341;
+const passcode = "iloveyashwanth";
 let check = 0;
 login.addEventListener("click", function (e) {
   e.preventDefault();
-  const receivedPin = Number(inputPin.value);
+  // const receivedPin = Number(inputPin.value);
+  const receivedPin = inputPin.value;
   if (receivedPin === passcode) {
-    removeBlur.forEach((section) => {
+    allSections.forEach((section) => {
       section.style.transition = "all 0.6s ease-out";
       section.classList.remove("blur-background");
       loginDiv.classList.add("hidden");
